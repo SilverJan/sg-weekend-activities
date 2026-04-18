@@ -14,11 +14,19 @@ Search the web for current events and activities happening in Singapore this wee
 6. "Singapore Indonesian events food bazaar this weekend" — Indonesian culture
 7. "Singapore food markets hawker festivals this weekend" — food events
 8. "things to do couples Singapore this weekend" — date ideas
+9. "Singapore DnB drum and bass this weekend" - drum and bass music
 
 For each search, extract concrete events with dates, times, locations, costs, and source URLs. Discard anything that:
 - Is not happening this specific weekend or is not currently open/available
 - Is a museum or art gallery exhibition
 - Is an artsy/contemporary art event
+- Is related to chinese music
+- is related to istana open house
+- Is related to makeup
+- Is related to shopping
+- Is anything at changi airport
+- is related to Singapore Cable Car
+- is related to FRIENDS show
 
 ## Step 2: Read the design template
 
