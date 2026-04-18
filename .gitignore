@@ -1,2 +1,6 @@
 public/*
 !public/.gitkeep
+!public/archive
+public/archive/*
+!public/archive/.gitkeep
+!public/archive/*.html

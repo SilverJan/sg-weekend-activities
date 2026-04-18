@@ -2,28 +2,39 @@
 
 ## Project Purpose
 
-This project generates a weekly HTML page showcasing weekend activities and events in Singapore. The page is deployed to GitHub Pages every Friday evening (9 PM SGT).
+Generates a weekly HTML page showcasing weekend activities and events in Singapore. Deployed to GitHub Pages every Friday evening (9 PM SGT), but also run manually.
 
-## Rules
+## Hard Rules
 
-1. **Output location**: Always write the generated HTML to `public/index.html`.
-2. **Self-contained HTML**: The output must be a single, self-contained HTML file with all CSS inlined. Do not reference external stylesheets or JavaScript files (except for links to external event websites).
-3. **Read the base CSS**: Before generating, read `templates/base.css` and incorporate its design tokens (colors, fonts, spacing) into your inline styles.
-4. **Mobile-first**: The page must be responsive and look great on mobile phones, since the users will primarily browse it on their phones.
-5. **No JavaScript frameworks**: Use vanilla HTML and CSS only. Minimal vanilla JS is acceptable for interactions like accordion toggles or smooth scrolling.
-6. **Content accuracy**: Only include events and activities you found via web search. Do not fabricate event names, dates, venues, or prices.
-7. **Practical information**: Every activity entry must include: name, date/time, location, estimated cost (or "Free"), and a link to the source.
-8. **Couple-friendly**: All activities should be suitable for a couple doing weekend activities together.
+1. **Output locations**:
+   - `public/index.html` — main page with This Weekend + Upcoming Weekend + Past Weekends
+   - `public/archive/{CURRENT_SAT_ISO}.html` — standalone snapshot of the "This Weekend" section (permalink)
+2. **Self-contained HTML**: Single file, all CSS inlined. No external stylesheets or JS frameworks. External `<img>` URLs from source sites are OK; external event links are OK.
+3. **Reject past events**: Never include any event whose end date is before the start of "This Weekend" (in SGT). If a source is ambiguous about the date, skip it.
+4. **Cover both weekends**: Research and show activities for This Weekend AND Upcoming Weekend on the same page.
+5. **Real content only**: Only include events/activities found via web search. Never fabricate names, dates, venues, or prices.
+6. **Mobile-first**: Responsive, readable on phones.
+7. **Every activity entry** must include: name, date/time, location, cost (or "Free"), source link.
 
 ## Content Preferences
 
 **Prioritize these categories:**
-- Outdoor activities: new park connectors, parks, boardwalks, nature trails, hiking, cycling routes
-- Japanese culture: festivals, food events, pop-ups, cultural experiences
-- German culture: festivals, food events, Oktoberfest-style events, cultural experiences
-- Indonesian culture: festivals, food bazaars, cultural events
+- Outdoor: new park connectors, parks, boardwalks, nature trails, hiking, cycling
+- Japanese culture: events, festivals, film, food, Japan Creative Centre, Japanese Association SG
+- German culture: events, Goethe-Institut, Brotzeit / Paulaner events, German-speaking community
+- Indonesian culture: festivals, food bazaars, events
 
-**Skip these entirely:**
-- Museums and art galleries
-- Artsy exhibitions or installations
-- Abstract/contemporary art events
+**Skip entirely:**
+- Museums (unless there's a special outdoor/nature/Japanese/German/Indonesian angle)
+- Art galleries
+- Abstract/contemporary art exhibitions
+
+## Fallback for Japanese / German / Indonesian sections
+
+If no confirmed weekend events exist for one of these cultures, include 1–3 evergreen "Worth visiting this weekend" picks — notable venues always open on weekends (e.g. Brotzeit outlets, Goethe-Institut library, Japan Rail Cafe, Japanese bookshops, Indonesian food streets). Label these clearly so they're not confused with time-bound events.
+
+## Archive behavior
+
+- Before finishing, Glob `public/archive/*.html` to build the "Past Weekends" section on `index.html`.
+- Sort past weekends newest-first.
+- The archive file for the CURRENT weekend (`{CURRENT_SAT_ISO}.html`) should NOT appear in the past list on its own page.
