@@ -30,15 +30,18 @@ jobs:
           PROMPT=$(cat prompt.md)
           PROMPT="${PROMPT//\{\{SATURDAY_DATE\}\}/$WEEKEND_SAT}"
           PROMPT="${PROMPT//\{\{SUNDAY_DATE\}\}/$WEEKEND_SUN}"
-          echo "$PROMPT" > /tmp/resolved-prompt.md
+          {
+            echo 'content<<PROMPT_EOF'
+            echo "$PROMPT"
+            echo 'PROMPT_EOF'
+          } >> "$GITHUB_OUTPUT"
 
       - name: Generate weekend activities page with Claude Code
         uses: anthropics/claude-code-action@v1
         with:
-          prompt_file: /tmp/resolved-prompt.md
+          prompt: ${{ steps.prompt.outputs.content }}
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
-          allowed_tools: "Bash,Read,Write,Edit,WebSearch,WebFetch,Glob,Grep"
-          max_turns: "30"
+          claude_args: '--max-turns 30 --allowed-tools "Bash,Read,Write,Edit,WebSearch,WebFetch,Glob,Grep"'
 
       - name: Verify output was generated
         run: |
