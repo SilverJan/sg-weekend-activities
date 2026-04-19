@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Singapore Weekend Activities — 18 April 2026</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --color-primary: #2D6A4F;
+      --color-primary-light: #52B788;
+      --color-accent: #E76F51;
+      --color-accent-light: #F4A261;
+      --color-bg: #FEFAE0;
+      --color-card: #FFFFFF;
+      --color-text: #2B2D42;
+      --color-text-light: #6C757D;
+      --color-free-badge: #40916C;
+      --color-divider: #E9ECEF;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--color-text);
+      background: var(--color-bg);
+    }
+
+    h1 { font-size: 2rem; font-weight: 700; }
+    h2 { font-size: 1.5rem; font-weight: 600; color: var(--color-primary); }
+    h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 6px; }
+
+    a { color: var(--color-accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Back bar ── */
+    .back-bar {
+      background: var(--color-primary);
+      padding: 10px 16px;
+    }
+    .back-bar a {
+      color: #fff;
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+    .back-bar a:hover { text-decoration: underline; }
+
+    /* ── Header ── */
+    .site-header {
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+      color: #fff;
+      padding: 40px 16px 28px;
+      text-align: center;
+    }
+    .site-header h1 { color: #fff; margin-bottom: 6px; }
+    .site-header .subtitle { opacity: 0.9; font-size: 1rem; }
+    .site-header .archive-label {
+      display: inline-block;
+      margin-bottom: 10px;
+      background: rgba(255,255,255,0.2);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 3px 12px;
+      border-radius: 999px;
+      color: #fff;
+    }
+
+    /* ── Section ── */
+    .section-wrap { padding: 32px 16px; }
+    .section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--color-primary);
+      margin-bottom: 24px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--color-primary-light);
+    }
+    .category-header {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-text);
+      margin: 28px 0 14px;
+      letter-spacing: 0.01em;
+    }
+    .category-header:first-of-type { margin-top: 0; }
+
+    /* ── Card Grid ── */
+    .card-grid {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 640px) {
+      .card-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 1024px) {
+      .card-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    /* ── Card ── */
+    .card {
+      background: var(--color-card);
+      border-radius: 12px;
+      padding: 20px 24px 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow 0.2s ease;
+    }
+    .card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.12); }
+    .card.worth-visiting { border-left: 4px solid var(--color-accent-light); }
+
+    .card-desc {
+      font-size: 0.9rem;
+      color: var(--color-text-light);
+      margin-bottom: 12px;
+      flex: 1;
+    }
+    .card-meta {
+      font-size: 0.82rem;
+      color: var(--color-text);
+      margin-bottom: 3px;
+      line-height: 1.5;
+    }
+    .card-footer {
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    /* ── Badges ── */
+    .badge-free {
+      display: inline-block;
+      background: var(--color-free-badge);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 2px 10px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .badge-cost {
+      display: inline-block;
+      background: #f0ece0;
+      color: var(--color-text);
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 2px 10px;
+      border-radius: 999px;
+    }
+    .badge-worth {
+      display: inline-block;
+      background: var(--color-accent-light);
+      color: #fff;
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 2px 9px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      margin-bottom: 8px;
+    }
+
+    .card-link {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--color-accent);
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 28px 16px;
+      color: var(--color-text-light);
+      font-size: 0.82rem;
+      border-top: 1px solid var(--color-divider);
+    }
+  </style>
+</head>
+<body>
+
+<div class="back-bar">
+  <a href="../index.html">← Back to latest</a>
+</div>
+
+<header class="site-header">
+  <div class="archive-label">Archive</div>
+  <h1>🇸🇬 Singapore Weekend Activities</h1>
+  <p class="subtitle">Weekend of Saturday, 18 April 2026</p>
+</header>
+
+<div class="section-wrap">
+<div class="section-inner">
+
+  <h2 class="section-title">This weekend — Saturday, 18 April 2026 to Sunday, 19 April 2026</h2>
+
+  <!-- 🌳 Outdoor & Nature -->
+  <div class="category-header">🌳 Outdoor &amp; Nature</div>
+  <div class="card-grid">
+
+    <div class="card">
+      <h3>It's a Capy Celebration at River Wonders</h3>
+      <p class="card-desc">Meet Ollie, River Wonders' 100-day-old capybara pup. Keeper presentations at the Once Upon a River stage, a Capy Crew Trail with collectible rewards, themed enrichment sessions, and limited-edition capybara merch.</p>
+      <p class="card-meta">📅 Sat–Sun, 18–19 Apr 2026 · Keeper talks at 11:30 AM, 2:30 PM &amp; 4:30 PM daily</p>
+      <p class="card-meta">📍 River Wonders, 80 Mandai Lake Rd (Mandai)</p>
+      <div class="card-footer">
+        <span class="badge-cost">Park admission applies</span>
+        <a class="card-link" href="https://www.mandai.com/en/discover-mandai/events/river-wonders/welcome-to-the-capy-crew.html" target="_blank" rel="noopener">More info →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>World Wellness Journey 2026</h3>
+      <p class="card-desc">A community social outreach event with game booths, health screenings, and a scenic 2.6 km walk around the Sports Hub vicinity. Free, family-friendly.</p>
+      <p class="card-meta">📅 Sat, 18 Apr 2026</p>
+      <p class="card-meta">📍 OCBC Square, Singapore Sports Hub (Kallang)</p>
+      <div class="card-footer">
+        <span class="badge-free">Free</span>
+        <a class="card-link" href="https://www.activesgcircle.gov.sg" target="_blank" rel="noopener">More info →</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 🇮🇩 Indonesian & Malay Culture -->
+  <div class="category-header">🇮🇩 Indonesian &amp; Malay Culture</div>
+  <div class="card-grid">
+
+    <div class="card">
+      <h3>Pesta Raya – Malay Festival of Arts 2026</h3>
+      <p class="card-desc">The 25th edition of Esplanade's flagship Nusantara arts festival closes this weekend. Theatre, concerts, traditional music, and free outdoor performances celebrating Malay and Indonesian culture. Indonesian post-rockers The Trees &amp; The Wild headline the music programme.</p>
+      <p class="card-meta">📅 Sat–Sun, 18–19 Apr 2026 (final weekend; festival ran 16–19 Apr)</p>
+      <p class="card-meta">📍 Esplanade – Theatres on the Bay (City Hall)</p>
+      <div class="card-footer">
+        <span class="badge-free">Mostly free · Some shows ticketed</span>
+        <a class="card-link" href="https://www.esplanade.com/whats-on/festivals-and-series/festivals/2026/pesta-raya-malay-festival-of-arts" target="_blank" rel="noopener">More info →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Tepuk-Tepuk Raya — Free Outdoor Dikir Barat</h3>
+      <p class="card-desc">Closing performance of Pesta Raya 2026: five renowned dikir barat groups perform together in a high-energy showcase of rhythmic clapping, harmonies, and festive Hari Raya spirit. No tickets needed — just show up.</p>
+      <p class="card-meta">📅 Sun, 19 Apr 2026 · 3:00 PM &amp; 4:15 PM (two shows)</p>
+      <p class="card-meta">📍 DBS Foundation Outdoor Theatre, Esplanade (City Hall)</p>
+      <div class="card-footer">
+        <span class="badge-free">Free</span>
+        <a class="card-link" href="https://www.esplanade.com/en/whats-on/festivals-and-series/festivals/2026/pesta-raya-malay-festival-of-arts/events/tepuk-tepuk-raya" target="_blank" rel="noopener">More info →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Adrian Khalif Live at Esplanade</h3>
+      <p class="card-desc">Indonesian R&amp;B sensation Adrian Khalif performs at the Esplanade Annexe Studio — one of Indonesia's most beloved young artists bringing his soulful pop sound to Singapore for a rare live show.</p>
+      <p class="card-meta">📅 Sun, 19 Apr 2026</p>
+      <p class="card-meta">📍 Esplanade Annexe Studio, 1 Esplanade Dr (City Hall)</p>
+      <div class="card-footer">
+        <span class="badge-cost">Ticketed</span>
+        <a class="card-link" href="https://www.esplanade.com/whats-on" target="_blank" rel="noopener">More info →</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 🇯🇵 Japanese Culture -->
+  <div class="category-header">🇯🇵 Japanese Culture</div>
+  <div class="card-grid">
+
+    <div class="card worth-visiting">
+      <span class="badge-worth">Worth visiting this weekend</span>
+      <h3>Japan Rail Cafe</h3>
+      <p class="card-desc">Singapore's one-of-a-kind Japanese railway-themed café serving matcha lattes, Hokkaido milk soft-serve, and Japanese light bites — while doubling as an interactive Japan travel hub. A peaceful weekend stop for Japan fans.</p>
+      <p class="card-meta">📅 Open weekends (check hours on-site)</p>
+      <p class="card-meta">📍 Bugis+, 201 Victoria Street #04-09 (Bugis)</p>
+      <div class="card-footer">
+        <span class="badge-cost">Café prices</span>
+        <a class="card-link" href="https://www.japanrailcafe.com.sg" target="_blank" rel="noopener">More info →</a>
+      </div>
+    </div>
+
+    <div class="card worth-visiting">
+      <span class="badge-worth">Worth visiting this weekend</span>
+      <h3>Kinokuniya — Japanese Books &amp; Manga</h3>
+      <p class="card-desc">One of Asia's largest selections of Japanese-language books, manga, anime merchandise, and stationery spread across two floors. A quiet, absorbing weekend browse for Japanese culture lovers of any age.</p>
+      <p class="card-meta">📅 Open Sat &amp; Sun, 10:00 AM – 9:30 PM</p>
+      <p class="card-meta">📍 Ngee Ann City, 391 Orchard Rd #04-01 (Orchard)</p>
+      <div class="card-footer">
+        <span class="badge-free">Free to browse</span>
+        <a class="card-link" href="https://singapore.kinokuniya.com" target="_blank" rel="noopener">More info →</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 🇩🇪 German Culture -->
+  <div class="category-header">🇩🇪 German Culture</div>
+  <div class="card-grid">
+
+    <div class="card worth-visiting">
+      <span class="badge-worth">Worth visiting this weekend</span>
+      <h3>Paulaner Bräuhaus Singapore</h3>
+      <p class="card-desc">Singapore's only authentic Bavarian brauhaus, brewing its own Paulaner lager on-site. This spring, the seasonal Maibock is on tap. Celebrating 30 years in Singapore in 2026 — a genuine German institution in the heart of the city.</p>
+      <p class="card-meta">📅 Open Sat &amp; Sun, lunch &amp; dinner</p>
+      <p class="card-meta">📍 9 Raffles Blvd #01-01, Millenia Walk (City Hall / Promenade)</p>
+      <div class="card-footer">
+        <span class="badge-cost">Restaurant prices</span>
+        <a class="card-link" href="https://www.paulaner-brauhaus-singapore.com" target="_blank" rel="noopener">More info →</a>
+      </div>
+    </div>
+
+    <div class="card worth-visiting">
+      <span class="badge-worth">Worth visiting this weekend</span>
+      <h3>Brotzeit German Bier Bar &amp; Restaurant</h3>
+      <p class="card-desc">Classic Bavarian comfort food — crispy pork knuckle, giant pretzels, weisswurst, and ice-cold Paulaner on tap. Multiple convenient outlets across Singapore for a no-fuss German weekend meal.</p>
+      <p class="card-meta">📅 Open Sat &amp; Sun, lunch &amp; dinner</p>
+      <p class="card-meta">📍 VivoCity #01-149 · Westgate #01-20 · Raffles City #B1-45 · Katong</p>
+      <div class="card-footer">
+        <span class="badge-cost">Restaurant prices</span>
+        <a class="card-link" href="https://www.brotzeit.co" target="_blank" rel="noopener">More info →</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 🎵 Music & Nightlife -->
+  <div class="category-header">🎵 Music &amp; Nightlife</div>
+  <div class="card-grid">
+
+    <div class="card">
+      <h3>Palm Tree Music Festival Singapore 2026</h3>
+      <p class="card-desc">Kygo's tropical EDM festival makes its Asian debut at Gardens by the Bay. Headliners: John Summit, Alesso, Layton Giordani, MaRLo — plus local DJs Jade Rasif and Nicole Lim. Set against the backdrop of Supertrees. Strictly 18+, ID required.</p>
+      <p class="card-meta">📅 Sat, 18 Apr 2026 · GA doors 2:00 PM (Priority 1:00 PM) · 18+ only</p>
+      <p class="card-meta">📍 The Meadow, Gardens by the Bay (Marina)</p>
+      <div class="card-footer">
+        <span class="badge-cost">Ticketed</span>
+        <a class="card-link" href="https://palmtreemusicfestival.com/singapore/" target="_blank" rel="noopener">More info →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Nexus at the Gardens — Free Concert</h3>
+      <p class="card-desc">Nexus International School's choirs, chamber strings, jazz/pop ensembles, and senior orchestra perform classic hits from One Republic, ABBA, Take That, and more. Free, all ages welcome — just turn up.</p>
+      <p class="card-meta">📅 Sat, 18 Apr 2026 · 5:30 PM – 7:00 PM</p>
+      <p class="card-meta">📍 Shaw Foundation Symphony Stage, Gardens by the Bay (Marina)</p>
+      <div class="card-footer">
+        <span class="badge-free">Free</span>
+        <a class="card-link" href="https://www.eventbrite.com/e/nexus-at-the-gardens-2026-tickets-1985779588204" target="_blank" rel="noopener">More info →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Groove Top's 8th Anniversary</h3>
+      <p class="card-desc">Tanjong Beach Club's groove-focused beach party marks eight years with an afternoon-to-evening lineup on Sentosa's sand. Chill vibes from 3 PM building to a sunset set. Walk-ins welcome.</p>
+      <p class="card-meta">📅 Sat, 18 Apr 2026 · 3:00 PM – 10:00 PM</p>
+      <p class="card-meta">📍 Tanjong Beach Club, Tanjong Beach Walk (Sentosa)</p>
+      <div class="card-footer">
+        <span class="badge-cost">Walk-ins welcome</span>
+        <a class="card-link" href="https://www.tanjongbeachclub.com" target="_blank" rel="noopener">More info →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>CÉ LA VI × Nino &amp; Mo-shi</h3>
+      <p class="card-desc">High-altitude rooftop club night at the iconic CÉ LA VI above Marina Bay Sands, headlined by Nino and Mo-shi. Skyline views, cocktails, and a lively Saturday night crowd.</p>
+      <p class="card-meta">📅 Sat, 18 Apr 2026</p>
+      <p class="card-meta">📍 CÉ LA VI Club Lounge, Marina Bay Sands Tower 3 (Marina)</p>
+      <div class="card-footer">
+        <span class="badge-cost">$38++ entry</span>
+        <a class="card-link" href="https://www.celavi.com/en/singapore/" target="_blank" rel="noopener">More info →</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 🛍️ Markets & Shopping -->
+  <div class="category-header">🛍️ Markets &amp; Shopping</div>
+  <div class="card-grid">
+
+    <div class="card">
+      <h3>Resurrack × Little Miss Market</h3>
+      <p class="card-desc">Singapore's vibiest vintage flea collaborates with Little Miss Market for a girlhood-themed edition. Up to 35 vendors selling vintage clothing, vinyl records, cameras, handmade goods, and antiques in a Bugis back lane.</p>
+      <p class="card-meta">📅 Sat–Sun, 18–19 Apr 2026 · 3:00 PM – 9:00 PM</p>
+      <p class="card-meta">📍 Bugis Street Art Lane, 261 Victoria St (Bugis MRT)</p>
+      <div class="card-footer">
+        <span class="badge-free">Free entry</span>
+        <a class="card-link" href="https://www.resurrack.com" target="_blank" rel="noopener">More info →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Great Wine &amp; Spirits Clearance Sale</h3>
+      <p class="card-desc">Cellarbration clears over 100 wines and spirits at up to 70% off RRP — whiskies, reds, whites, and more. Great for stocking up on bottles you've been watching.</p>
+      <p class="card-meta">📅 Sat–Sun, 18–19 Apr 2026 · 10:00 AM – 8:00 PM</p>
+      <p class="card-meta">📍 Cellarbration Ubi Showroom (Ubi / Paya Lebar)</p>
+      <div class="card-footer">
+        <span class="badge-free">Free entry</span>
+        <a class="card-link" href="https://www.cellarbration.com.sg" target="_blank" rel="noopener">More info →</a>
+      </div>
+    </div>
+
+  </div>
+
+</div><!-- .section-inner -->
+</div><!-- .section-wrap -->
+
+<footer>
+  Archive snapshot generated Sunday, 19 April 2026 with Claude.
+  <br><a href="../index.html">← Back to latest weekend activities</a>
+</footer>
+
+</body>
+</html>
