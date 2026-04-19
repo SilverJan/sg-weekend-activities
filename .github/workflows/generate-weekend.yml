@@ -17,7 +17,11 @@ concurrency:
 
 jobs:
   generate:
+    # Isolated: runs Claude once. If later jobs fail, "Re-run failed jobs"
+    # on GitHub picks up from the uploaded artifact without re-invoking Claude.
     runs-on: ubuntu-latest
+    outputs:
+      current_sat_iso: ${{ steps.prompt.outputs.current_sat_iso }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -90,6 +94,30 @@ jobs:
           echo "index.html    = $(wc -c < public/index.html) bytes"
           echo "archive file  = $(wc -c < "$ARCHIVE_FILE") bytes"
 
+      - name: Upload generated site as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-content
+          path: public
+          retention-days: 7
+
+  archive-commit:
+    # Commits the new archive HTML snapshot back to main so it persists
+    # across runs for the "Past weekends" section.
+    needs: generate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Download generated site
+        uses: actions/download-artifact@v4
+        with:
+          name: site-content
+          path: public
+
       - name: Commit new archive snapshot (if any)
         run: |
           git config user.name "github-actions[bot]"
@@ -97,10 +125,25 @@ jobs:
           git add public/archive/
           if git diff --cached --quiet; then
             echo "No archive changes to commit."
-          else
-            git commit -m "Archive weekend snapshot for ${{ steps.prompt.outputs.current_sat_iso }}"
-            git push
+            exit 0
           fi
+          git commit -m "Archive weekend snapshot for ${{ needs.generate.outputs.current_sat_iso }}"
+          git push
+
+  deploy:
+    # Independent of archive-commit — site still deploys even if the commit
+    # step fails. Re-runnable on its own without re-invoking Claude.
+    needs: generate
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Download generated site
+        uses: actions/download-artifact@v4
+        with:
+          name: site-content
+          path: public
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -110,13 +153,6 @@ jobs:
         with:
           path: public
 
-  deploy:
-    runs-on: ubuntu-latest
-    needs: generate
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
