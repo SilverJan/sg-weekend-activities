@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Singapore Weekend Activities — 25 April 2026</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --color-primary: #2D6A4F;
+      --color-primary-light: #52B788;
+      --color-accent: #E76F51;
+      --color-accent-light: #F4A261;
+      --color-bg: #FEFAE0;
+      --color-card: #FFFFFF;
+      --color-text: #2B2D42;
+      --color-text-light: #6C757D;
+      --color-free-badge: #40916C;
+      --color-divider: #E9ECEF;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--color-text);
+      background: var(--color-bg);
+    }
+
+    h1 { font-size: 2rem; font-weight: 700; }
+    h2 { font-size: 1.5rem; font-weight: 600; color: var(--color-primary); }
+    h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 6px; }
+
+    a { color: var(--color-accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Back Bar ── */
+    .back-bar {
+      background: var(--color-primary);
+      padding: 10px 16px;
+    }
+    .back-bar a {
+      color: #fff;
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+    .back-bar a:hover { text-decoration: underline; }
+
+    /* ── Site Header ── */
+    .site-header {
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+      color: #fff;
+      padding: 40px 16px 28px;
+      text-align: center;
+    }
+    .site-header h1 { color: #fff; margin-bottom: 6px; }
+    .site-header .subtitle { opacity: 0.9; font-size: 1rem; }
+    .site-header .archive-label {
+      display: inline-block;
+      margin-bottom: 10px;
+      background: rgba(255,255,255,0.2);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 3px 12px;
+      border-radius: 999px;
+      color: #fff;
+    }
+
+    /* ── Section ── */
+    .section-wrap { padding: 32px 16px; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--color-primary);
+      margin-bottom: 24px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--color-primary-light);
+    }
+    .category-header {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-text);
+      margin: 28px 0 14px;
+      letter-spacing: 0.01em;
+    }
+    .category-header:first-of-type { margin-top: 0; }
+
+    /* ── Card Grid ── */
+    .card-grid {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 640px) {
+      .card-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 1024px) {
+      .card-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    /* ── Card ── */
+    .card {
+      background: var(--color-card);
+      border-radius: 12px;
+      padding: 20px 24px 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow 0.2s ease;
+    }
+    .card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.12); }
+    .card.worth-visiting { border-left: 4px solid var(--color-accent-light); }
+
+    .card-desc {
+      font-size: 0.9rem;
+      color: var(--color-text-light);
+      margin-bottom: 12px;
+      flex: 1;
+    }
+    .card-meta {
+      font-size: 0.82rem;
+      color: var(--color-text);
+      margin-bottom: 3px;
+      line-height: 1.5;
+    }
+    .card-footer {
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    /* ── Badges ── */
+    .badge-free {
+      display: inline-block;
+      background: var(--color-free-badge);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 2px 10px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .badge-cost {
+      display: inline-block;
+      background: #f0ece0;
+      color: var(--color-text);
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 2px 10px;
+      border-radius: 999px;
+    }
+    .badge-worth {
+      display: inline-block;
+      background: var(--color-accent-light);
+      color: #fff;
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 2px 9px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      margin-bottom: 8px;
+    }
+
+    .card-link {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--color-accent);
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 28px 16px;
+      color: var(--color-text-light);
+      font-size: 0.82rem;
+      border-top: 1px solid var(--color-divider);
+    }
+  </style>
+</head>
+<body>
+
+<div class="back-bar">
+  <a href="../index.html">← Back to latest</a>
+</div>
+
+<header class="site-header">
+  <div class="archive-label">Archive</div>
+  <h1>🇸🇬 Singapore Weekend Activities</h1>
+  <p class="subtitle">Weekend of Saturday, 25 April 2026</p>
+</header>
+
+<div class="section-wrap">
+<div class="section-inner">
+
+  <h2 class="section-title">This weekend — Saturday, 25 April 2026 to Sunday, 26 April 2026</h2>
+
+  <!-- 🌳 Outdoor & Nature -->
+  <div class="category-header">🌳 Outdoor &amp; Nature</div>
+  <div class="card-grid">
+
+    <div class="card">
+      <h3>T100 Singapore Triathlon — Free Spectating</h3>
+      <p class="card-desc">The world's premier triathlon series races through Marina Bay. Men compete Saturday, women Sunday — 2 km swim in the bay, 80 km bike on closed city roads through the F1 circuit, and an 18 km run looping through Gardens by the Bay. Great free spectator views from the Bayfront Event Space and along the run course.</p>
+      <p class="card-meta">📅 Sat 25 Apr (men's race, ~2:15 PM) · Sun 26 Apr (women's race, ~2:15 PM)</p>
+      <p class="card-meta">📍 Marina Bay / F1 Pit Building, 1 Republic Blvd (Marina)</p>
+      <div class="card-footer">
+        <span class="badge-free">Free to watch</span>
+        <a class="card-link" href="https://t100triathlon.com/singapore/" target="_blank" rel="noopener">More info →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Tulipmania 2026 — Dutch Masters in Bloom</h3>
+      <p class="card-desc">The 12th edition of Singapore's beloved annual tulip showcase fills the Flower Dome with Dutch Golden Age floral art: a recreation of the Rijksmuseum, a working-windmill tribute, thousands of tulips, and a Van Gogh-inspired installation. Inspired by Vermeer, Rembrandt, and Mondrian reimagined through intricate floral arrangements.</p>
+      <p class="card-meta">📅 Sat–Sun, 25–26 Apr 2026 · 9:00 AM – 9:00 PM (runs until 17 May)</p>
+      <p class="card-meta">📍 Flower Dome, Gardens by the Bay, 18 Marina Gardens Dr (Marina)</p>
+      <div class="card-footer">
+        <span class="badge-cost">From $12 adult (Flower Dome ticket)</span>
+        <a class="card-link" href="https://www.gardensbythebay.com.sg/en/things-to-do/calendar-of-events/tulipmania-2026.html" target="_blank" rel="noopener">More info →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Singapore Maritime Week — Open Pier &amp; Vessel Visits</h3>
+      <p class="card-desc">The Singapore Maritime Gallery and Marina South Pier host free family-friendly activities: face painting, caricatures, Sea Scouts booths, and rare guided vessel visits aboard naval and coast guard boats. Vessel tour tickets are limited — register on Eventbrite early to secure a spot aboard.</p>
+      <p class="card-meta">📅 Sat–Sun, 25–26 Apr 2026</p>
+      <p class="card-meta">📍 Singapore Maritime Gallery &amp; Marina South Pier, 31 Marina Coastal Dr (Marina)</p>
+      <div class="card-footer">
+        <span class="badge-free">Free (vessel visits: limited tickets)</span>
+        <a class="card-link" href="https://www.eventbrite.sg" target="_blank" rel="noopener">More info →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Lyrids Meteor Shower — Peak Weekend</h3>
+      <p class="card-desc">One of the oldest known meteor showers — first recorded in 687 BC — peaks this weekend. Expect up to 10–20 meteors per hour in the early hours. Head to a dark, open sky away from city lights between 2 AM and 5 AM. Changi Beach Park facing the strait or Labrador Nature Reserve are popular viewing spots.</p>
+      <p class="card-meta">📅 Sat night into Sun morning, 25–26 Apr · Best viewing: 2:00 AM – 5:00 AM</p>
+      <p class="card-meta">📍 Changi Beach Park (Changi) · Labrador Nature Reserve (Labrador Park MRT)</p>
+      <div class="card-footer">
+        <span class="badge-free">Free</span>
+        <a class="card-link" href="https://www.nparks.gov.sg" target="_blank" rel="noopener">More info →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>FOC Sunset Watch Party — Sentosa Beach</h3>
+      <p class="card-desc">FOC Sentosa's well-loved weekly sunset ritual: a guided beach soundbath followed by Mediterranean tapas, Spanish wines, and cocktails as the sun drops below the horizon. Each $40 ticket includes a $40 F&amp;B credit — so you're essentially paying for your food and drinks. Running every weekend until May.</p>
+      <p class="card-meta">📅 Sat–Sun, 25–26 Apr 2026 · Evening (sunset timing)</p>
+      <p class="card-meta">📍 FOC Sentosa, 110 Tanjong Beach Walk (Sentosa)</p>
+      <div class="card-footer">
+        <span class="badge-cost">$40/person (incl. $40 F&amp;B credits)</span>
+        <a class="card-link" href="https://focbythebeach.com" target="_blank" rel="noopener">More info →</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 🇮🇩 Indonesian & Malay Culture -->
+  <div class="category-header">🇮🇩 Indonesian &amp; Malay Culture</div>
+  <div class="card-grid">
+
+    <div class="card">
+      <h3>Pesta Pecah Panggung — Malay Heritage Centre Reopens</h3>
+      <p class="card-desc">The newly revamped Malay Heritage Centre reopens on 25 April with an all-new storyline "Dari Rantau Ke Rumah" (From the Region to Home), tracing how Malay communities across the Nusantara shaped Singapore. The nine-day reopening festival brings over 50 programmes across Kampong Gelam — the first themed weekend (25–27 Apr) focuses on the wider Malay world, with cross-border performances, a vibrant street parade, and cultural events. Free entry to galleries through June.</p>
+      <p class="card-meta">📅 Sat–Sun, 25–26 Apr 2026 (festival runs 25 Apr – 3 May, closed Mon)</p>
+      <p class="card-meta">📍 Malay Heritage Centre, 85 Sultan Gate &amp; Kampong Gelam (Arab Street MRT)</p>
+      <div class="card-footer">
+        <span class="badge-free">Free (some programmes need registration)</span>
+        <a class="card-link" href="https://www.malayheritage.gov.sg" target="_blank" rel="noopener">More info →</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 🇯🇵 Japanese Culture -->
+  <div class="category-header">🇯🇵 Japanese Culture</div>
+  <div class="card-grid">
+
+    <div class="card worth-visiting">
+      <span class="badge-worth">Worth visiting this weekend</span>
+      <h3>Japan Rail Cafe</h3>
+      <p class="card-desc">Singapore's one-of-a-kind Japanese railway-themed café serving matcha lattes, Hokkaido milk soft-serve, and Japanese light bites — while doubling as an interactive Japan travel hub with route maps, JR memorabilia, and seasonal highlights. A peaceful weekend stop for any Japan enthusiast.</p>
+      <p class="card-meta">📅 Open Sat &amp; Sun (check hours on-site)</p>
+      <p class="card-meta">📍 Bugis+, 201 Victoria Street #04-09 (Bugis MRT)</p>
+      <div class="card-footer">
+        <span class="badge-cost">Café prices</span>
+        <a class="card-link" href="https://www.japanrailcafe.com.sg" target="_blank" rel="noopener">More info →</a>
+      </div>
+    </div>
+
+    <div class="card worth-visiting">
+      <span class="badge-worth">Worth visiting this weekend</span>
+      <h3>Kinokuniya — Japanese Books &amp; Manga</h3>
+      <p class="card-desc">One of Asia's largest selections of Japanese-language books, manga, anime merchandise, art books, and stationery spread across two floors. A quiet, absorbing weekend browse for Japanese culture lovers of any age — and a good place to discover what's trending in Japan right now.</p>
+      <p class="card-meta">📅 Open Sat &amp; Sun, 10:00 AM – 9:30 PM</p>
+      <p class="card-meta">📍 Ngee Ann City, 391 Orchard Rd #04-01 (Orchard MRT)</p>
+      <div class="card-footer">
+        <span class="badge-free">Free to browse</span>
+        <a class="card-link" href="https://singapore.kinokuniya.com" target="_blank" rel="noopener">More info →</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 🇩🇪 German Culture -->
+  <div class="category-header">🇩🇪 German Culture</div>
+  <div class="card-grid">
+
+    <div class="card worth-visiting">
+      <span class="badge-worth">Worth visiting this weekend</span>
+      <h3>Paulaner Bräuhaus Singapore</h3>
+      <p class="card-desc">Singapore's only authentic Bavarian brauhaus, brewing its own Paulaner lager on-site in the copper tanks you can see from the dining room. Celebrating 30 years in Singapore in 2026. Hearty German dishes, a seasonal spring menu, and fresh-brewed house beer — a genuine German institution steps from the Marina waterfront.</p>
+      <p class="card-meta">📅 Open Sat &amp; Sun, lunch &amp; dinner</p>
+      <p class="card-meta">📍 9 Raffles Blvd #01-01, Millenia Walk (Promenade MRT)</p>
+      <div class="card-footer">
+        <span class="badge-cost">Restaurant prices</span>
+        <a class="card-link" href="https://www.paulaner-brauhaus-singapore.com" target="_blank" rel="noopener">More info →</a>
+      </div>
+    </div>
+
+    <div class="card worth-visiting">
+      <span class="badge-worth">Worth visiting this weekend</span>
+      <h3>Brotzeit German Bier Bar &amp; Restaurant</h3>
+      <p class="card-desc">Classic Bavarian comfort food — crispy pork knuckle, giant baked pretzels, weisswurst, and ice-cold Paulaner on tap. Multiple outlets across Singapore make this an easy pick for a no-fuss German weekend lunch or dinner with the family.</p>
+      <p class="card-meta">📅 Open Sat &amp; Sun, lunch &amp; dinner</p>
+      <p class="card-meta">📍 VivoCity #01-149 · Westgate #01-20 · Raffles City #B1-45 · Katong</p>
+      <div class="card-footer">
+        <span class="badge-cost">Restaurant prices</span>
+        <a class="card-link" href="https://www.brotzeit.co" target="_blank" rel="noopener">More info →</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 🍜 Food & Drink -->
+  <div class="category-header">🍜 Food &amp; Drink</div>
+  <div class="card-grid">
+
+    <div class="card">
+      <h3>vOilah! French Food Market at VivoCity</h3>
+      <p class="card-desc">Part of the vOilah! France Singapore Festival (25 Apr – 20 Jun), this outdoor food market at VivoCity brings together French producers and importers: artisanal cheese, pastries, chocolates, and wines. Catch live cooking demonstrations by Michelin-starred Chef Sébastien Lepinoy and Chef Jérémy Gillon. Free to browse and taste.</p>
+      <p class="card-meta">📅 Sat–Sun, 25–26 Apr 2026 (launched 24 Apr; part of festival running until 20 Jun)</p>
+      <p class="card-meta">📍 VivoCity, 1 HarbourFront Walk (HarbourFront MRT)</p>
+      <div class="card-footer">
+        <span class="badge-free">Free entry</span>
+        <a class="card-link" href="https://www.voilah.sg" target="_blank" rel="noopener">More info →</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 🎵 Music & Nightlife -->
+  <div class="category-header">🎵 Music &amp; Nightlife</div>
+  <div class="card-grid">
+
+    <div class="card">
+      <h3>AFTER DARK 002 — HYENAH (Berlin) at WOOBAR</h3>
+      <p class="card-desc">W Singapore's flagship music series returns with Berlin's masked Afro House pioneer HYENAH — the founder of Watergate Berlin's legendary RISE Afro House night. Support from Euniverse, RPDM, Shahan, and Watch Her Bern. Each ticket includes one drink and complimentary Sentosa Island entry plus shuttle from VivoCity. Strictly 18+.</p>
+      <p class="card-meta">📅 Sat, 25 Apr 2026 · 8:00 PM – 2:00 AM</p>
+      <p class="card-meta">📍 WOOBAR, W Singapore – Sentosa Cove, 21 Ocean Way (Sentosa)</p>
+      <div class="card-footer">
+        <span class="badge-cost">From $25++ (incl. 1 drink)</span>
+        <a class="card-link" href="https://www.eventbrite.sg/e/after-dark-002-with-hyenah-berlin-tickets-1985354250006" target="_blank" rel="noopener">More info →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Burger and Beats at DOUGH, CHIJMES</h3>
+      <p class="card-desc">DOUGH at CHIJMES opens its courtyard for an early-evening party: gourmet burgers, bar bites, and cocktails alongside DJs Spadez and Gwen spinning house and R&amp;B. Free entry, great vibes in the historic colonial courtyard, and a perfect pre-dinner warm-up before heading into the city.</p>
+      <p class="card-meta">📅 Sat, 25 Apr 2026 · 5:00 PM – 8:00 PM</p>
+      <p class="card-meta">📍 DOUGH, CHIJMES, 30 Victoria Street (City Hall MRT)</p>
+      <div class="card-footer">
+        <span class="badge-free">Free admission</span>
+        <a class="card-link" href="https://thehoneycombers.com/singapore/things-to-do-this-weekend-singapore/" target="_blank" rel="noopener">More info →</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 🛍️ Markets & Shopping -->
+  <div class="category-header">🛍️ Markets &amp; Shopping</div>
+  <div class="card-grid">
+
+    <div class="card">
+      <h3>Public Garden — Independent Brands Market</h3>
+      <p class="card-desc">Over 100 curated independent designers, artists, and brands from Southeast Asia and beyond take over Suntec Convention Hall. Expect stickers, washi tapes, handcrafted jewellery, ceramics, fashion, and homeware — including Kazuki Edo (Japanese handmade wire-mesh jewellery) and Hon Studio (Taiwanese leather goods). One of Singapore's best creative markets.</p>
+      <p class="card-meta">📅 Sat–Sun, 25–26 Apr 2026 · 1:00 PM – 7:00 PM</p>
+      <p class="card-meta">📍 Suntec Convention Hall 403–404, 1 Raffles Blvd (City Hall MRT)</p>
+      <div class="card-footer">
+        <span class="badge-free">Free admission</span>
+        <a class="card-link" href="https://www.public-garden.com" target="_blank" rel="noopener">More info →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Saturdate — Film Photography Market</h3>
+      <p class="card-desc">Monthly film photography gathering at Objectifs Annexe: browse and buy second-hand cameras, vintage film props, and local zines at the market; swap pre-loved gear at the Gear Swap corner; or join a hands-on pinhole camera workshop — build your own camera from everyday objects, shoot a photo, and develop it in the darkroom on-site.</p>
+      <p class="card-meta">📅 Sat, 25 Apr 2026 · 1:00 PM – 6:00 PM (pinhole workshop: 2:00 – 4:00 PM)</p>
+      <p class="card-meta">📍 Objectifs Annexe, 155 Middle Road (Rochor / Bugis)</p>
+      <div class="card-footer">
+        <span class="badge-cost">Market free · Workshop ticketed</span>
+        <a class="card-link" href="https://www.objectifs.com.sg" target="_blank" rel="noopener">More info →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Let's HangOut — Circular Fashion Thrift Pop-Up</h3>
+      <p class="card-desc">Part of Circular Fashion Week Singapore: bring your unloved clothes for a clothing swap, get fraying seams mended at the mending station, and browse the slow-fashion pop-up market. Give your wardrobe a refresh without buying new. Free to attend — register in advance.</p>
+      <p class="card-meta">📅 Sat, 25 Apr 2026</p>
+      <p class="card-meta">📍 Temasek Shophouse (City Hall MRT)</p>
+      <div class="card-footer">
+        <span class="badge-free">Free (registration required)</span>
+        <a class="card-link" href="https://www.timeout.com/singapore/things-to-do/lets-hangout" target="_blank" rel="noopener">More info →</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>South Side Keppel × And Others Community Market</h3>
+      <p class="card-desc">South Side Keppel café teams with And Others for a pet-friendly weekend pop-up: handcrafted jewellery, statement pieces, pre-loved designer labels, vintage fashion finds — alongside wagyu burgers, woodfire shakshuka, truffle fries, highballs, cocktails, and live DJ sets in an industrial warehouse setting by the port.</p>
+      <p class="card-meta">📅 Sat–Sun, 25–26 Apr 2026 · 4:00 PM – 9:00 PM</p>
+      <p class="card-meta">📍 South Side Keppel, 1557 Keppel Rd #01-04 (Tanjong Pagar MRT)</p>
+      <div class="card-footer">
+        <span class="badge-free">Free entry</span>
+        <a class="card-link" href="https://www.timeout.com/singapore/things-to-do/south-side-keppel-and-others-community-market" target="_blank" rel="noopener">More info →</a>
+      </div>
+    </div>
+
+  </div>
+
+</div><!-- .section-inner -->
+</div><!-- .section-wrap -->
+
+<footer>
+  Archive snapshot generated Friday, 24 April 2026 with Claude.
+  <br><a href="../index.html">← Back to latest weekend activities</a>
+</footer>
+
+</body>
+</html>
