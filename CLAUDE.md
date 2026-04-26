@@ -2,7 +2,7 @@
 
 ## Project Purpose
 
-Generates a weekly HTML page showcasing weekend activities and events in Singapore. Deployed to GitHub Pages every Friday evening (9 PM SGT), but also run manually.
+Generates a weekly HTML page showcasing weekend activities and events in Singapore. Deployed to GitHub Pages every Friday morning (9 AM SGT), but also run manually.
 
 ## Hard Rules
 

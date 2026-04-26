@@ -2,8 +2,8 @@ name: Generate Weekend Activities
 
 on:
   schedule:
-    # Friday 1:00 PM UTC = Friday 9:00 PM SGT
-    - cron: '0 13 * * 5'
+    # Friday 1:00 AM UTC = Friday 9:00 AM SGT
+    - cron: '0 1 * * 5'
   workflow_dispatch:
 
 permissions:

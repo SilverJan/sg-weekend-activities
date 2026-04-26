@@ -86,7 +86,7 @@ Header
   If empty: "No past weekends archived yet."
 
 Footer
-  "Generated {{TODAY_DATE}} with Claude. Updated every Friday 9 PM SGT."
+  "Generated {{TODAY_DATE}} with Claude. Updated every Friday 9 AM SGT."
 ```
 
 ### Write `public/archive/{{CURRENT_SAT_ISO}}.html`:
