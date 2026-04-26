@@ -45,13 +45,15 @@ Run web searches to find events on {{CURRENT_SAT_DATE}} and {{CURRENT_SUN_DATE}}
 - "Singapore Indonesian food bazaar OR festival {{CURRENT_SAT_DATE}}"
 - "Singapore hawker OR food festival OR night market {{CURRENT_SAT_DATE}}"
 - "Singapore drum and bass OR DnB club night {{CURRENT_SAT_DATE}}"
+- "Singapore Botanic Gardens concert {{CURRENT_SAT_DATE}}"
 - "things to do couples Singapore {{CURRENT_SAT_DATE}}"
 
 For each promising result, verify the date against the rules above.
 
 ## Step 2: Research — Upcoming Weekend
 
-Repeat the same searches using {{UPCOMING_SAT_DATE}} and {{UPCOMING_SUN_DATE}}.
+Repeat the same searches using {{UPCOMING_SAT_DATE}} and {{UPCOMING_SUN_DATE}}, including:
+- "Singapore Botanic Gardens concert {{UPCOMING_SAT_DATE}}"
 
 ## Step 3: Build past-weekends list
 
